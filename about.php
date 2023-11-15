@@ -11,25 +11,26 @@
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <link rel="shortcut icon" href="../images/logo_gacoan.png" type="">
+  <link rel="shortcut icon" href="images/logo_gacoan.png" type="">
 
   <title> Mie Gacoan </title>
 
   <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
 
   <!--owl slider stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <!-- nice select  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
   <!-- font awesome style -->
-  <link href="../css/font-awesome.min.css" rel="stylesheet" />
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
 
   <!-- Custom styles for this template -->
-  <link href="../css/style.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
-  <link href="../css/responsive.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
 
 </head>
 
@@ -37,15 +38,15 @@
 
   <div class="hero_area">
     <div class="bg-box">
-      <img src="../images/hero-bg.jpg" alt="">
+      <img src="images/hero-bg.jpg" alt="">
     </div>
     <!-- header section strats -->
     <header class="header_section">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="../index.html">
+          <a class="navbar-brand" href="index.php">
             <span>
-                <img src="../images/mie-gacoan.png" style="width: 100px;">
+              <img src="images/mie-gacoan.png" style="width: 100px;">
             </span>
           </a>
 
@@ -56,27 +57,27 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mx-auto ">
               <li class="nav-item active">
-                <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../menu.html">Menu</a>
+                <a class="nav-link" href="menu.php">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../about.html">About</a>
+                <a class="nav-link" href="about.php">About</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   CRUD
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Produk</a></li>
+                  <li><a class="dropdown-item" href="crud/produk.php">Produk</a></li>
                   <li><a class="dropdown-item" href="#">Kategori</a></li>
-                  <li><a class="dropdown-item" href="diskon.html">Diskon</a></li>
+                  <li><a class="dropdown-item" href="crud/diskon.php">Diskon</a></li>
                 </ul>
               </li>
             </ul>
             <div class="user_option">
-              <a href="" class="user_link">
+              <a href="#" class="user_link">
                 <i class="fa fa-user" aria-hidden="true"></i>
               </a>
               <a class="cart_link" href="#">
@@ -138,7 +139,7 @@
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
               </form>
-              <a href="" class="order_online">
+              <a href="#" class="order_online">
                 Order Online
               </a>
             </div>
@@ -149,81 +150,57 @@
     <!-- end header section -->
   </div>
 
-  <!-- book section -->
-  <section class="book_section layout_padding">
-    <div class="container">
-      <div class="heading_container">
-        <h2 class="mx-auto" >
-          Data Menu
-        </h2>
-        <a href="tambah_produk.html"><button type="button" class="btn btn-primary">Tambah</button></a>
-      </div>
+  <!-- about section -->
+
+  <section class="about_section layout_padding">
+    <div class="container  ">
+
       <div class="row">
-        <div class="col-md-12 mx-auto">
-          <div class="form_container">
-            <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th scope="col">No</th>
-                    <th scope="col" style="width: 100px;">Gambar</th>
-                    <th scope="col">Nama</th>
-                    <th scope="col">Kategori</th>
-                    <th scope="col">Harga</th>
-                    <th scope="col" style="width: 400px;">Deskripsi</th>
-                    <th scope="col">Aksi</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td><img src="../images/mie/ii MIE SETAN.jpg" style="width: 100px;"></td>
-                    <td>Mie Setan</td>
-                    <td>Mie</td>
-                    <td>Rp. 14.000</td>
-                    <td>Semangkuk mie dengan rasa pedas asin yang bakal membuat mulut kamu meledak
-                        !!!. Tentunya dengan topping ayam cincang dan krupuk pangsit yang gurih dan
-                        Kreeessshhh....</td>
-                    <td>
-                        <a class="btn btn-success" href="">Edit</a>
-                        <a onclick="return confirm('Yakin Hapus?');" class="btn btn-danger alert_notif" href="">Hapus</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td><img src="../images/mie/ii MIE SETAN.jpg" style="width: 100px;"></td>
-                    <td>Mie Setan</td>
-                    <td>Mie</td>
-                    <td>Rp. 14.000</td>
-                    <td>Semangkuk mie dengan rasa pedas asin yang bakal membuat mulut kamu meledak
-                        !!!. Tentunya dengan topping ayam cincang dan krupuk pangsit yang gurih dan
-                        Kreeessshhh....</td>
-                    <td>
-                        <a class="btn btn-success" href="">Edit</a>
-                        <a onclick="return confirm('Yakin Hapus?');" class="btn btn-danger alert_notif" href="">Hapus</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td><img src="../images/mie/ii MIE SETAN.jpg" style="width: 100px;"></td>
-                    <td>Mie Setan</td>
-                    <td>Mie</td>
-                    <td>Rp. 14.000</td>
-                    <td>Semangkuk mie dengan rasa pedas asin yang bakal membuat mulut kamu meledak
-                        !!!. Tentunya dengan topping ayam cincang dan krupuk pangsit yang gurih dan
-                        Kreeessshhh....</td>
-                    <td>
-                        <a class="btn btn-success" href="">Edit</a>
-                        <a onclick="return confirm('Yakin Hapus?');" class="btn btn-danger alert_notif" href="">Hapus</a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+        <div class="col-md-6 ">
+          <div class="img-box">
+            <img src="images/mie-gacoan.png" alt="">
           </div>
+        </div>
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                ABOUT
+              </h2>
+            </div>
+            <p>
+              Nama "Mie Gacoan" diambil dari kata "Gaco" yang artinya jagoan / andalan dalam bahasa jawa. Tidak heran jika Mie Gacoan menjadi tempat bersantap favorit bagi masyarakat indonesia, khususnya mahasiswa, pelajar dan keluarga. Dengan mengusung suasana restoran yang atraktif, keren dan lega, dan juga dilengkapi berbagai fasilitas membuat setiap pengunjung makin betah dan selalu ingin kembali lagi.            
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                VISI
+              </h2>
+            </div>
+            <p>
+              Menjadi brand F&B retail terbaik dan terbesar dengan standard pelayanan, produk, dan kebersihan bertaraf internasional            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                MISI
+              </h2>
+            </div>
+            <p>
+              1. Menyediakan produk terbaik dengan harga yang sangat terjangkau untuk customer kelas menengah <br>
+              2. Menciptakan customer experience yang terbaik dan berkelanjutan <br>
+              3. Membawa nama Indonesia ke dalam peta F&B dunia          </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- end book section -->
+
+  <!-- end about section -->
 
   <!-- footer section -->
   <footer class="footer_section">
@@ -235,19 +212,19 @@
               Kontak
             </h4>
             <div class="contact_link_box">
-              <a href="">
+              <a href="#">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
                   Location
                 </span>
               </a>
-              <a href="">
+              <a href="#">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
                   0857815347
                 </span>
               </a>
-              <a href="">
+              <a href="#">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
                 <span>
                   gacoan@gmail.com
@@ -258,7 +235,7 @@
         </div>
         <div class="col-md-4 footer-col">
           <div class="footer_detail">
-            <a href="" class="footer-logo">
+            <a href="#" class="footer-logo">
               Mie Gacoan
             </a>
             <div class="footer_social">
@@ -292,7 +269,7 @@
       <div class="footer-info">
         <p>
           &copy; <span id="displayYear"></span> Dibuat oleh
-          <a href="" target="_blank">Irfan Fathurrohman</a>
+          <a href="#" target="_blank">Irfan Fathurrohman</a>
         </p>
       </div>
     </div>
@@ -321,6 +298,5 @@
   <!-- End Google Map -->
 
 </body>
-
 
 </html>

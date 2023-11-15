@@ -43,7 +43,7 @@
     <header class="header_section">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="../index.html">
+          <a class="navbar-brand" href="../index.php">
             <span>
                 <img src="../images/mie-gacoan.png" style="width: 100px;">
             </span>
@@ -56,22 +56,22 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mx-auto ">
               <li class="nav-item active">
-                <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="../index.php">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../menu.html">Menu</a>
+                <a class="nav-link" href="../menu.php">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../about.html">About</a>
+                <a class="nav-link" href="../about.php">About</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   CRUD
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="produk.html">Produk</a></li>
+                  <li><a class="dropdown-item" href="produk.php">Produk</a></li>
                   <li><a class="dropdown-item" href="#">Kategori</a></li>
-                  <li><a class="dropdown-item" href="diskon.html">Diskon</a></li>
+                  <li><a class="dropdown-item" href="diskon.php">Diskon</a></li>
                 </ul>
               </li>
             </ul>
@@ -154,7 +154,7 @@
     <div class="container">
       <div class="heading_container">
         <h2 class="mx-auto">
-          Tambah Menu
+          Tambah Diskon
         </h2>
       </div>
       <div class="row">
@@ -163,32 +163,28 @@
             <form action="">
               <div>
                 <p>Nama Menu</p>
-                <input type="text" class="form-control"/>
-              </div>
-              <div>
-                <p>Kategori</p>
                 <select class="form-control nice-select wide">
                   <option value="" disabled selected>
-                   
+                    
                   </option>
                   <option value="">
-                    Mie
+                    Mie Iblis
                   </option>
                   <option value="">
-                    Minuman
+                    Es Tuyul
                   </option>
                   <option value="">
-                    Dimsum
+                    Pangsit goreng
                   </option>
                 </select>
               </div>
               <div>
-                <p>Harga</p>
+                <p>Jumlah Diskon</p>
                 <input type="email" class="form-control"/>
               </div>
               <div>
-                <p>Deskripsi</p>
-                <textarea class="form-control" name="alamat" required="" autocomplete="off" ></textarea>
+                <p>Periode</p>
+                <input type="date" class="form-control"/>
               </div>
               <div>
                 <p>Gambar</p>
@@ -198,7 +194,7 @@
                 <button>
                   Tambah
                 </button>
-              </div>
+              </div>              
             </form>
           </div>
         </div>

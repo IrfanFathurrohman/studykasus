@@ -1,3 +1,7 @@
+<?php 
+include "../koneksi.php";
+$query = mysqli_query($conn,"SELECT * FROM tb_menu INNER JOIN tb_kategori ON tb_kategori.id_kategori = tb_menu.id_kategori;");
+?>
 <!DOCTYPE html>
 <html>
 
@@ -43,9 +47,9 @@
     <header class="header_section">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="../index.html">
+          <a class="navbar-brand" href="../index.php">
             <span>
-              <img src="../images/mie-gacoan.png" style="width: 100px;">
+                <img src="../images/mie-gacoan.png" style="width: 100px;">
             </span>
           </a>
 
@@ -56,22 +60,22 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mx-auto ">
               <li class="nav-item active">
-                <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="../index.php">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../menu.html">Menu</a>
+                <a class="nav-link" href="../menu.php">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../about.html">About</a>
+                <a class="nav-link" href="../about.php">About</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   CRUD
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="produk.html">Produk</a></li>
+                  <li><a class="dropdown-item" href="#">Produk</a></li>
                   <li><a class="dropdown-item" href="#">Kategori</a></li>
-                  <li><a class="dropdown-item" href="#">Diskon</a></li>
+                  <li><a class="dropdown-item" href="diskon.php">Diskon</a></li>
                 </ul>
               </li>
             </ul>
@@ -153,10 +157,10 @@
   <section class="book_section layout_padding">
     <div class="container">
       <div class="heading_container">
-        <h2 class="mx-auto">
-          Daftar Diskon
+        <h2 class="mx-auto" >
+          Data Menu
         </h2>
-        <a href="tambah_diskon.html"><button type="button" class="btn btn-primary">Tambah</button></a>
+        <a href="tambah_produk.php"><button type="button" class="btn btn-primary">Tambah</button></a>
       </div>
       <div class="row">
         <div class="col-md-12 mx-auto">
@@ -165,47 +169,37 @@
                 <thead>
                   <tr>
                     <th scope="col">No</th>
-                    <th scope="col">Gambar</th>
-                    <th scope="col">Nama Produk</th>
-                    <th scope="col">Jumlah diskon</th>
-                    <th scope="col">Priode waktu</th>
+                    <!-- <th scope="col" style="width: 100px;">Gambar</th> -->
+                    <th scope="col">Nama</th>
+                    <th scope="col">Kategori</th>
+                    <th scope="col">Harga</th>
+                    <th scope="col" style="width: 400px;">Deskripsi</th>
                     <th scope="col">Aksi</th>
                   </tr>
                 </thead>
                 <tbody>
+                  <?php 
+                    $no = 1;
+                    while($data = mysqli_fetch_array($query)) { 
+                  ?>
                   <tr>
-                    <th scope="row">1</th>
-                    <td><img src="../images/mie/ii MIE SETAN.jpg" style="width: 100px;"></td>
-                    <td>Mie Setan</td>
-                    <td>10%</td>
-                    <td>11/11/2023 - 14/11/2023</td>
+                    <td><?php echo $no;?></td>
+                    <!-- <td><img src="../images/mie/ii MIE SETAN.jpg" style="width: 100px;"></td> -->
+                    <td><?php echo $data['nama_menu']; ?></td>
+                    <td><?php echo $data['nama_kategori']; ?></td>
                     <td>
-                      <a class="btn btn-success" href="">Edit</a>
-                      <a onclick="return confirm('Yakin Hapus?');" class="btn btn-danger alert_notif" href="">Hapus</a>
+                      <?php
+                      $angka = $data['harga'];
+                      echo "Rp. " . number_format($angka,2,',','.'); 
+                      ?>
+                    </td>
+                    <td><?php echo $data['deskripsi']; ?></td>
+                    <td>
+                        <a class="btn btn-success" href="">Edit</a>
+                        <a onclick="return confirm('Yakin Hapus?');" class="btn btn-danger alert_notif" href="">Hapus</a>
                     </td>
                   </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td><img src="../images/mie/ii MIE SETAN.jpg" style="width: 100px;"></td>
-                    <td>Mie Setan</td>
-                    <td>10%</td>
-                    <td>11/11/2023 - 14/11/2023</td>
-                    <td>
-                      <a class="btn btn-success" href="">Edit</a>
-                      <a onclick="return confirm('Yakin Hapus?');" class="btn btn-danger alert_notif" href="">Hapus</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td><img src="../images/mie/ii MIE SETAN.jpg" style="width: 100px;"></td>
-                    <td>Mie Setan</td>
-                    <td>10%</td>
-                    <td>11/11/2023 - 14/11/2023</td>
-                    <td>
-                      <a class="btn btn-success" href="">Edit</a>
-                      <a onclick="return confirm('Yakin Hapus?');" class="btn btn-danger alert_notif" href="">Hapus</a>
-                    </td>
-                  </tr>
+                  <?php $no++; } ?>
                 </tbody>
               </table>
           </div>

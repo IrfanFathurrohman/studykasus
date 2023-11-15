@@ -43,7 +43,7 @@
     <header class="header_section">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="../index.html">
+          <a class="navbar-brand" href="../index.php">
             <span>
                 <img src="../images/mie-gacoan.png" style="width: 100px;">
             </span>
@@ -56,22 +56,22 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mx-auto ">
               <li class="nav-item active">
-                <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="../index.php">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../menu.html">Menu</a>
+                <a class="nav-link" href="../menu.php">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../about.html">About</a>
+                <a class="nav-link" href="../about.php">About</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   CRUD
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="produk.html">Produk</a></li>
+                  <li><a class="dropdown-item" href="produk.php">Produk</a></li>
                   <li><a class="dropdown-item" href="#">Kategori</a></li>
-                  <li><a class="dropdown-item" href="diskon.html">Diskon</a></li>
+                  <li><a class="dropdown-item" href="diskon.php">Diskon</a></li>
                 </ul>
               </li>
             </ul>
@@ -154,47 +154,51 @@
     <div class="container">
       <div class="heading_container">
         <h2 class="mx-auto">
-          Tambah Diskon
+          Tambah Menu
         </h2>
       </div>
       <div class="row">
         <div class="col-md-6 mx-auto">
           <div class="form_container">
-            <form action="">
+            <form action="proses_tambah/tambah_produk.php">
               <div>
                 <p>Nama Menu</p>
-                <select class="form-control nice-select wide">
+                <input type="text" class="form-control" name="nama_menu"/>
+              </div>
+              <div>
+                <p>Kategori</p>
+                <select class="form-control nice-select wide" name="id_kategori">
                   <option value="" disabled selected>
-                    
+                   
                   </option>
                   <option value="">
-                    Mie Iblis
-                  </option>
-                  <option value="">
-                    Es Tuyul
-                  </option>
-                  <option value="">
-                    Pangsit goreng
+                    <?php
+                      include "../koneksi.php";
+                      $query = mysqli_query($conn,"SELECT * FROM tb_kategori");
+                      while ($data = mysqli_fetch_array($query)) {
+                          echo "<option value=$data[id_kategori]> $data[nama_kategori]</option>";
+                      }
+                    ?>
                   </option>
                 </select>
               </div>
               <div>
-                <p>Jumlah Diskon</p>
-                <input type="email" class="form-control"/>
+                <p>Harga</p>
+                <input type="email" class="form-control" name="harga"/>
               </div>
               <div>
-                <p>Periode</p>
-                <input type="date" class="form-control"/>
+                <p>Deskripsi</p>
+                <textarea class="form-control" name="deskripsi" required="" autocomplete="off" ></textarea>
               </div>
-              <div>
+              <!-- <div>
                 <p>Gambar</p>
                 <input type="file" class="form-control"/>
-              </div>
+              </div> -->
               <div class="btn_box">
-                <button>
+                <button type="submit" name="submit">
                   Tambah
                 </button>
-              </div>              
+              </div>
             </form>
           </div>
         </div>
