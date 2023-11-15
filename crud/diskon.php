@@ -1,6 +1,6 @@
 <?php 
 include "../koneksi.php";
-$query = mysqli_query($conn,"SELECT * FROM tb_diskon INNER JOIN tb_menu ON tb_diskon.id_diskon = tb_menu.id_menu;");
+$query = mysqli_query($conn,"SELECT * FROM tb_diskon INNER JOIN tb_menu ON tb_menu.id_menu = tb_diskon.id_menu;");
 ?>
 <!DOCTYPE html>
 <html>
@@ -160,7 +160,7 @@ $query = mysqli_query($conn,"SELECT * FROM tb_diskon INNER JOIN tb_menu ON tb_di
         <h2 class="mx-auto">
           Daftar Diskon
         </h2>
-        <a href="tambah_diskon.html"><button type="button" class="btn btn-primary">Tambah</button></a>
+        <a href="tambah_diskon.php"><button type="button" class="btn btn-primary">Tambah</button></a>
       </div>
       <div class="row">
         <div class="col-md-12 mx-auto">
@@ -188,8 +188,8 @@ $query = mysqli_query($conn,"SELECT * FROM tb_diskon INNER JOIN tb_menu ON tb_di
                     <td><?php echo $data['diskon']; ?></td>
                     <td><?php echo $data['periode']; ?></td>
                     <td>
-                      <a class="btn btn-success" href="">Edit</a>
-                      <a onclick="return confirm('Yakin Hapus?');" class="btn btn-danger alert_notif" href="">Hapus</a>
+                      <a class="btn btn-success" href="edit_diskon.php?id_diskon=<?php echo $data["id_diskon"]; ?>">Edit</a>
+                      <a onclick="return confirm('Yakin Hapus?');" class="btn btn-danger alert_notif" href="proses_hapus/hapus_diskon.php?id_diskon=<?php echo $data["id_diskon"]; ?>">Hapus</a>
                     </td>
                   </tr>
                   <?php $no++; } ?>

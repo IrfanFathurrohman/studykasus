@@ -150,6 +150,17 @@
   </div>
 
   <!-- book section -->
+  <?php
+    include "../koneksi.php";
+    $id_diskon = $_GET['id_diskon'];
+
+    $produk = mysqli_query($conn,"SELECT * FROM tb_diskon WHERE id_diskon='$id_diskon'");
+    while($data = mysqli_fetch_array($produk)){
+        $id_menu = $data['id_menu'];
+        $diskon = $data['diskon'];
+        $periode = $data['periode'];
+    }
+  ?>
   <section class="book_section layout_padding">
     <div class="container">
       <div class="heading_container">
@@ -160,31 +171,25 @@
       <div class="row">
         <div class="col-md-6 mx-auto">
           <div class="form_container">
-            <form action="proses_tambah/tambah_diskon.php" method="post">
+            <form action="proses_edit/edit_diskon.php?id_diskon=<?php echo $id_diskon; ?>" method="post">
               <div>
                 <p>Nama Menu</p>
                 <select class="form-control nice-select wide" name="id_menu">
-                  <option value="" disabled selected>
-                   
-                  </option>
-                  <option value="">
-                    <?php
-                      include "../koneksi.php";
-                      $query = mysqli_query($conn,"SELECT * FROM tb_menu");
-                      while ($data = mysqli_fetch_array($query)) {
-                          echo "<option value=$data[id_menu]> $data[nama_menu]</option>";
-                      }
-                    ?>
-                  </option>
+                  <?php  
+                  include "../koneksi.php";
+                  $query = mysqli_query($conn,"SELECT * FROM tb_menu");
+                  while ($data = mysqli_fetch_array($query)) {            
+                      echo "<option value=$data[id_menu]> $data[nama_menu]</option>";} 
+                  ?>
                 </select>
               </div>
               <div>
                 <p>Jumlah Diskon</p>
-                <input type="text" class="form-control" name="diskon"/>
+                <input type="text" class="form-control" name="diskon" value="<?php echo $diskon; ?>"/>
               </div>
               <div>
                 <p>Periode</p>
-                <input type="date" class="form-control" name="periode"/>
+                <input type="date" class="form-control" name="periode" value="<?php echo $periode; ?>"/>
               </div>
               <!-- <div>
                 <p>Gambar</p>

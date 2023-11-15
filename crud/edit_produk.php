@@ -150,41 +150,51 @@
   </div>
 
   <!-- book section -->
+  <?php
+    include "../koneksi.php";
+    $id_menu = $_GET['id_menu'];
+
+    $produk = mysqli_query($conn,"SELECT * FROM tb_menu WHERE id_menu='$id_menu'");
+    while($data = mysqli_fetch_array($produk)){
+        $nama_menu = $data['nama_menu'];
+        $id_kategori = $data['id_kategori'];
+        $harga = $data['harga'];
+        $deskripsi = $data['deskripsi'];
+    }
+  ?>
   <section class="book_section layout_padding">
     <div class="container">
       <div class="heading_container">
         <h2 class="mx-auto">
-          Tambah Diskon
+          Tambah Menu
         </h2>
       </div>
       <div class="row">
         <div class="col-md-6 mx-auto">
           <div class="form_container">
-            <form action="proses_tambah/tambah_diskon.php" method="post">
+            <form action="proses_edit/edit_produk.php?id_menu=<?php echo $id_menu; ?>" method="post">
               <div>
                 <p>Nama Menu</p>
-                <select class="form-control nice-select wide" name="id_menu">
-                  <option value="" disabled selected>
-                   
-                  </option>
-                  <option value="">
-                    <?php
-                      include "../koneksi.php";
-                      $query = mysqli_query($conn,"SELECT * FROM tb_menu");
-                      while ($data = mysqli_fetch_array($query)) {
-                          echo "<option value=$data[id_menu]> $data[nama_menu]</option>";
-                      }
-                    ?>
-                  </option>
+                <input type="text" class="form-control" name="nama_menu" value="<?php echo $nama_menu; ?>"/>
+              </div>
+              <div>
+                <p>Kategori</p>
+                <select class="form-control nice-select wide" name="id_kategori">
+                  <?php  
+                  include "../koneksi.php";
+                  $query = mysqli_query($conn,"SELECT * FROM tb_kategori");
+                  while ($data = mysqli_fetch_array($query)) {            
+                      echo "<option value=$data[id_kategori]> $data[nama_kategori]</option>";} 
+                  ?>
                 </select>
               </div>
               <div>
-                <p>Jumlah Diskon</p>
-                <input type="text" class="form-control" name="diskon"/>
+                <p>Harga</p>
+                <input type="text" class="form-control" name="harga" value="<?php echo $harga; ?>"/>
               </div>
               <div>
-                <p>Periode</p>
-                <input type="date" class="form-control" name="periode"/>
+                <p>Deskripsi</p>
+                <textarea style="height: 150px;" class="form-control" name="deskripsi" required="" autocomplete="off"><?php echo $deskripsi; ?></textarea>
               </div>
               <!-- <div>
                 <p>Gambar</p>
@@ -194,7 +204,7 @@
                 <button type="submit" name="submit">
                   Tambah
                 </button>
-              </div>              
+              </div>
             </form>
           </div>
         </div>

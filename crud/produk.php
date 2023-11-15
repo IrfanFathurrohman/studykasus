@@ -196,8 +196,8 @@ $query = mysqli_query($conn,"SELECT * FROM tb_menu INNER JOIN tb_kategori ON tb_
                     </td>
                     <td><?php echo $data['deskripsi']; ?></td>
                     <td>
-                        <a class="btn btn-success" href="">Edit</a>
-                        <a onclick="return confirm('Yakin Hapus?');" class="btn btn-danger alert_notif" href="">Hapus</a>
+                      <a class="btn btn-success" href="edit_produk.php?id_menu=<?php echo $data["id_menu"]; ?>">Edit</a>
+                      <a onclick="return confirm('Yakin Hapus?');" class="btn btn-danger alert_notif" href="proses_hapus/hapus_produk.php?id_menu=<?php echo $data["id_menu"]; ?>">Hapus</a>
                     </td>
                   </tr>
                   <?php $no++; } ?>
