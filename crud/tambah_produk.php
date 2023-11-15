@@ -160,7 +160,7 @@
       <div class="row">
         <div class="col-md-6 mx-auto">
           <div class="form_container">
-            <form action="proses_tambah/tambah_produk.php">
+            <form action="proses_tambah/tambah_produk.php" method="post">
               <div>
                 <p>Nama Menu</p>
                 <input type="text" class="form-control" name="nama_menu"/>
@@ -184,7 +184,7 @@
               </div>
               <div>
                 <p>Harga</p>
-                <input type="email" class="form-control" name="harga"/>
+                <input type="text" class="form-control" name="harga"/>
               </div>
               <div>
                 <p>Deskripsi</p>

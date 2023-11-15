@@ -169,7 +169,7 @@ $query = mysqli_query($conn,"SELECT * FROM tb_menu INNER JOIN tb_kategori ON tb_
                 <thead>
                   <tr>
                     <th scope="col">No</th>
-                    <!-- <th scope="col" style="width: 100px;">Gambar</th> -->
+                    <th scope="col" style="width: 100px;">Gambar</th>
                     <th scope="col">Nama</th>
                     <th scope="col">Kategori</th>
                     <th scope="col">Harga</th>
@@ -184,6 +184,7 @@ $query = mysqli_query($conn,"SELECT * FROM tb_menu INNER JOIN tb_kategori ON tb_
                   ?>
                   <tr>
                     <td><?php echo $no;?></td>
+                    <td></td>
                     <!-- <td><img src="../images/mie/ii MIE SETAN.jpg" style="width: 100px;"></td> -->
                     <td><?php echo $data['nama_menu']; ?></td>
                     <td><?php echo $data['nama_kategori']; ?></td>
