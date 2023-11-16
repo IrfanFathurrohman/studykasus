@@ -218,7 +218,7 @@ $query_menu = mysqli_query($conn,"SELECT * FROM tb_menu INNER JOIN tb_kategori O
           <div class="col-md-6  ">
             <div class="box">
               <div class="img-box">
-                <img src="images/dimsum/i PANGSIT GORENG.jpg" alt="" style="width: 260px;">
+                <img src="images/menu/i PANGSIT GORENG.jpg" alt="" style="width: 260px;">
               </div>
               <div class="detail-box">
                 <h5>
@@ -264,7 +264,7 @@ $query_menu = mysqli_query($conn,"SELECT * FROM tb_menu INNER JOIN tb_kategori O
             <div class="box" style="height: 500px;">
               <div>
                 <div class="img-box">
-                  <img src="images/dimsum/i PANGSIT GORENG.jpg" alt="">
+                  <img src="images/menu/<?php echo $data['gambar']; ?>" alt="">
                 </div>
                 <div class="detail-box">
                   <h5>

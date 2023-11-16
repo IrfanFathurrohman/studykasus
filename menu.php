@@ -179,7 +179,7 @@ $query_menu = mysqli_query($conn,"SELECT * FROM tb_menu INNER JOIN tb_kategori O
             <div class="box" style="height: 500px;">
               <div>
                 <div class="img-box">
-                  <img src="images/dimsum/i PANGSIT GORENG.jpg" alt="">
+                  <img src="images/menu/<?php echo $data['gambar']; ?>" alt="">
                 </div>
                 <div class="detail-box">
                   <h5>
