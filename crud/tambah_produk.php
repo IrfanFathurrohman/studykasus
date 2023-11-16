@@ -160,7 +160,7 @@
       <div class="row">
         <div class="col-md-6 mx-auto">
           <div class="form_container">
-            <form action="proses_tambah/tambah_produk.php" method="post">
+            <form action="proses_tambah/tambah_produk.php" method="post" enctype="multipart/form-data">
               <div>
                 <p>Nama Menu</p>
                 <input type="text" class="form-control" name="nama_menu"/>
@@ -190,10 +190,10 @@
                 <p>Deskripsi</p>
                 <textarea class="form-control" name="deskripsi" required="" autocomplete="off" ></textarea>
               </div>
-              <!-- <div>
+              <div>
                 <p>Gambar</p>
-                <input type="file" class="form-control"/>
-              </div> -->
+                <input type="file" name="gambar" required="" />
+              </div>
               <div class="btn_box">
                 <button type="submit" name="submit">
                   Tambah

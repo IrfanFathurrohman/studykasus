@@ -184,8 +184,8 @@ $query = mysqli_query($conn,"SELECT * FROM tb_menu INNER JOIN tb_kategori ON tb_
                   ?>
                   <tr>
                     <td><?php echo $no;?></td>
-                    <td></td>
-                    <!-- <td><img src="../images/mie/ii MIE SETAN.jpg" style="width: 100px;"></td> -->
+                    <!-- <td></td> -->
+                    <td><img src="../images/menu/<?php echo $data['gambar']; ?>" style="width: 100px;"></td>
                     <td><?php echo $data['nama_menu']; ?></td>
                     <td><?php echo $data['nama_kategori']; ?></td>
                     <td>

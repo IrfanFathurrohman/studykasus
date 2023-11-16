@@ -160,6 +160,7 @@
         $id_kategori = $data['id_kategori'];
         $harga = $data['harga'];
         $deskripsi = $data['deskripsi'];
+        $gambar = $data['gambar'];
     }
   ?>
   <section class="book_section layout_padding">
@@ -172,11 +173,11 @@
       <div class="row">
         <div class="col-md-6 mx-auto">
           <div class="form_container">
-            <form action="proses_edit/edit_produk.php?id_menu=<?php echo $id_menu; ?>" method="post">
+            <form action="proses_edit/edit_produk.php?id_menu=<?php echo $id_menu; ?>" method="post" enctype="multipart/form-data">
               <div>
                 <p>Nama Menu</p>
                 <input type="text" class="form-control" name="nama_menu" value="<?php echo $nama_menu; ?>"/>
-              </div>
+              </div> 
               <div>
                 <p>Kategori</p>
                 <select class="form-control nice-select wide" name="id_kategori">
@@ -196,10 +197,10 @@
                 <p>Deskripsi</p>
                 <textarea style="height: 150px;" class="form-control" name="deskripsi" required="" autocomplete="off"><?php echo $deskripsi; ?></textarea>
               </div>
-              <!-- <div>
+              <div>
                 <p>Gambar</p>
-                <input type="file" class="form-control"/>
-              </div> -->
+                <input type="file" class="form-control" name="gambar" value="<?php echo $gambar; ?>"/>
+              </div>
               <div class="btn_box">
                 <button type="submit" name="submit">
                   Tambah
