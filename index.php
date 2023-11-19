@@ -1,6 +1,5 @@
 <?php 
 include "koneksi.php";
-$query_diskon = mysqli_query($conn,"SELECT * FROM tb_diskon INNER JOIN tb_menu ON tb_diskon.id_diskon = tb_menu.id_menu;");
 $query_menu = mysqli_query($conn,"SELECT * FROM tb_menu INNER JOIN tb_kategori ON tb_kategori.id_kategori = tb_menu.id_kategori;");
 ?>
 <!DOCTYPE html>
@@ -212,13 +211,16 @@ $query_menu = mysqli_query($conn,"SELECT * FROM tb_menu INNER JOIN tb_kategori O
       <div class="container ">
         <div class="row">
           <?php 
-            $no = 1;
+            $query_diskon = mysqli_query($conn,"SELECT * FROM tb_diskon INNER JOIN tb_menu ON tb_diskon.id_diskon = tb_menu.id_menu;");
             while($data = mysqli_fetch_array($query_diskon)) { 
+            $harga = $data['harga'];
+            $diskon = $harga*($data['diskon'])/100;
+            $harga_diskon = $harga-$diskon;
           ?>
           <div class="col-md-6  ">
             <div class="box">
               <div class="img-box">
-                <img src="images/menu/i PANGSIT GORENG.jpg" alt="" style="width: 260px;">
+                <img src="images/menu/<?php echo $data['gambar']; ?>" alt="" style="width: 260px;">
               </div>
               <div class="detail-box">
                 <h5>
@@ -227,10 +229,13 @@ $query_menu = mysqli_query($conn,"SELECT * FROM tb_menu INNER JOIN tb_kategori O
                 <h6>
                   <span><?php echo $data['diskon']; ?>%</span> Off
                 </h6>
+                <h6>
+                  <?php echo "Rp. " . number_format($harga_diskon,2,',','.'); ?>
+                </h6>
               </div>
             </div>
           </div>
-          <?php $no++; } ?>
+          <?php } ?>
         </div>
       </div>
     </div>

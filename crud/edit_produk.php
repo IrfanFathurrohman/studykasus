@@ -154,14 +154,17 @@
     include "../koneksi.php";
     $id_menu = $_GET['id_menu'];
 
-    $produk = mysqli_query($conn,"SELECT * FROM tb_menu WHERE id_menu='$id_menu'");
+    $produk = mysqli_query($conn,"SELECT * FROM tb_menu,tb_kategori WHERE tb_menu.id_kategori = tb_kategori.id_kategori AND id_menu='$id_menu'");
+
     while($data = mysqli_fetch_array($produk)){
         $nama_menu = $data['nama_menu'];
         $id_kategori = $data['id_kategori'];
         $harga = $data['harga'];
         $deskripsi = $data['deskripsi'];
         $gambar = $data['gambar'];
+        $nama_kategori = $data['nama_kategori'];
     }
+    
   ?>
   <section class="book_section layout_padding">
     <div class="container">
@@ -181,8 +184,8 @@
               <div>
                 <p>Kategori</p>
                 <select class="form-control nice-select wide" name="id_kategori">
-                  <?php  
-                  include "../koneksi.php";
+                  <?php   
+                  echo "<option value=$id_kategori> $nama_kategori </option>";
                   $query = mysqli_query($conn,"SELECT * FROM tb_kategori");
                   while ($data = mysqli_fetch_array($query)) {            
                       echo "<option value=$data[id_kategori]> $data[nama_kategori]</option>";} 
@@ -199,7 +202,8 @@
               </div>
               <div>
                 <p>Gambar</p>
-                <input type="file" class="form-control" name="gambar" value="<?php echo $gambar; ?>"/>
+                <img src="../images/menu/<?php echo $gambar ?>" style="width: 100px;">
+                <input type="file" class="form-control" name="gambar" required="" />
               </div>
               <div class="btn_box">
                 <button type="submit" name="submit">

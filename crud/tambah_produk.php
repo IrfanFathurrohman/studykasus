@@ -192,7 +192,7 @@
               </div>
               <div>
                 <p>Gambar</p>
-                <input type="file" name="gambar" required="" />
+                <input type="file" name="gambar" class="form-control" required="" />
               </div>
               <div class="btn_box">
                 <button type="submit" name="submit">
